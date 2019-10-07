@@ -11,7 +11,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity zsys_wrapper is
+entity top_zynqberry is
   port (
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -52,9 +52,9 @@ entity zsys_wrapper is
     led_op : out std_logic;
     ps_clk : in std_logic
   );
-end zsys_wrapper;
+end top_zynqberry;
 
-architecture STRUCTURE of zsys_wrapper is
+architecture RTL of top_zynqberry is
 
   component led_ctrl is
   port (
@@ -350,4 +350,4 @@ GPIO_1_tri_iobuf_9: component IOBUF
       O => GPIO_1_tri_i_9(9),
       T => GPIO_1_tri_t_9(9)
     );
-end STRUCTURE;
+end RTL;
