@@ -80,7 +80,9 @@ set rc [catch {
   set_property ip_repo_paths C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/ip_lib [current_project]
   set_property ip_output_repo C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1/top_zynqberry.dcp
+  read_ip -quiet c:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/vivado_target.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_bitgen_common.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_common.xdc
@@ -167,6 +169,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   catch { write_mem_info -force top_zynqberry.mmi }
   write_bitstream -force top_zynqberry.bit 
   catch {write_debug_probes -quiet -force top_zynqberry}

@@ -5,7 +5,7 @@
  * File Created: 2019/10/07 21:53
  * Author: kidtak51 ( 45393331+kidtak51@users.noreply.github.com )
  * *****
- * Last Modified: 2019/10/08 24:05
+ * Last Modified: 2019/10/08 24:19
  * Modified By: kidtak51 ( 45393331+kidtak51@users.noreply.github.com )
  * *****
  * Copyright 2018 - 2019  Project RockWave
@@ -60,8 +60,16 @@ module top_zynqberry(
     input [0:0]    ps_clk           
 );
 
+clk_wiz_0 u_clk_wiz_0(
+  .clk_out1(clk_out1),
+  .reset(1'b0),
+  .locked(locked),
+  .clk_in1(ps_clk)
+ );
+
+
 led_ctrl u_Led_Chika(
-      .clk_ip(ps_clk),
+      .clk_ip(clk_out1),
       .led_op(led_op),
       .interval_ip(32'h01FFFFFF)
     );
