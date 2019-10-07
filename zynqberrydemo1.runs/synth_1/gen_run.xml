@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1570340544">
-  <File Type="PA-TCL" Name="zsys_wrapper.tcl"/>
-  <File Type="REPORTS-TCL" Name="zsys_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="zsys_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="zsys_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="zsys_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="zsys_wrapper.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1570460864">
+  <File Type="PA-TCL" Name="top_zynqberry.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_zynqberry_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_zynqberry_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_zynqberry.vds"/>
+  <File Type="RDS-UTIL" Name="top_zynqberry_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_zynqberry_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_zynqberry.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_zynqberry_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_zynqberry_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/led_test.vhd">
@@ -14,15 +17,25 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/top_zynqberry.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/top_zynqverry.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="zsys_wrapper"/>
+      <Option Name="TopModule" Val="top_zynqberry"/>
+      <Option Name="TopLib" Val="xil_defaultlib"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/top_zynqberry.v"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

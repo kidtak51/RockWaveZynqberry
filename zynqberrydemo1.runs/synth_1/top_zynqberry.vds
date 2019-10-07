@@ -1,0 +1,416 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Oct  8 00:07:48 2019
+# Process ID: 10068
+# Current directory: C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1
+# Command line: vivado.exe -log top_zynqberry.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_zynqberry.tcl
+# Log file: C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1/top_zynqberry.vds
+# Journal file: C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_zynqberry.tcl -notrace
+Command: synth_design -top top_zynqberry -part xc7z010clg225-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 28240 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 357.582 ; gain = 100.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_zynqberry' [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqberry.v:22]
+INFO: [Synth 8-638] synthesizing module 'led_ctrl' [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/led_test.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'led_ctrl' (1#1) [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/led_test.vhd:15]
+WARNING: [Synth 8-3848] Net PWM_L in module/entity top_zynqberry does not have driver. [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqberry.v:45]
+WARNING: [Synth 8-3848] Net PWM_R in module/entity top_zynqberry does not have driver. [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqberry.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'top_zynqberry' (2#1) [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqberry.v:22]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port PWM_L[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port PWM_R[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[14]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[13]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[12]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[11]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[10]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[9]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[8]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[7]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[6]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[5]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[4]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[3]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[2]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DR_addr[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ba[2]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ba[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ba[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_cas_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ck_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ck_p[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_cke[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_cs_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dm[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dm[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[15]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[14]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[13]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[12]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[11]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[10]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[9]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[8]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[7]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[6]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[5]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[4]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[3]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[2]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dq[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dqs_n[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dqs_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dqs_p[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_dqs_p[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_odt[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_ras_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_reset_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port DDR_we_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_ddr_vrn[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_ddr_vrp[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[31]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[30]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[29]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[28]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[27]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[26]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[25]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[24]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[23]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[22]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[21]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[20]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[19]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[18]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[17]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[16]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[15]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[14]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[13]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[12]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[11]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[10]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[9]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[8]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[7]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[6]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[5]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[4]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[3]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[2]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_mio[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_ps_clk[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_ps_porb[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port FIXED_IO_ps_srstb[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port Vp_Vn_v_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port Vp_Vn_v_p[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_c_clk_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_c_clk_p[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_lp_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_lp_p[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_n[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_n[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_p[1]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port csi_d_p[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 412.758 ; gain = 155.570
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 412.758 ; gain = 155.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 412.758 ; gain = 155.570
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg225-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/vivado_target.xdc]
+Finished Parsing XDC File [C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/vivado_target.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.084 . Memory (MB): peak = 721.086 ; gain = 1.105
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 721.086 ; gain = 463.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 721.086 ; gain = 463.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 721.086 ; gain = 463.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 721.086 ; gain = 463.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module led_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port PWM_L[0]
+WARNING: [Synth 8-3331] design top_zynqberry has unconnected port PWM_R[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[12]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[13]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[14]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[15]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[8]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[9]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[10]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[11]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[0]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[1]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[2]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[3]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[4]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[5]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[6]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[7]' (FD) to 'u_Led_Chika/interval_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[31]' (FD) to 'u_Led_Chika/interval_reg[30]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[30]' (FD) to 'u_Led_Chika/interval_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[28]' (FD) to 'u_Led_Chika/interval_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[29]' (FD) to 'u_Led_Chika/interval_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[24]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[25]' (FD) to 'u_Led_Chika/interval_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[26]' (FD) to 'u_Led_Chika/interval_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_Led_Chika/interval_reg[27] )
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[16]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[17]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[18]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[19]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[20]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[21]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_Led_Chika/interval_reg[22]' (FD) to 'u_Led_Chika/interval_reg[23]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\u_Led_Chika/interval_reg[23] )
+WARNING: [Synth 8-3332] Sequential element (u_Led_Chika/interval_reg[27]) is unused and will be removed from module top_zynqberry.
+WARNING: [Synth 8-3332] Sequential element (u_Led_Chika/interval_reg[23]) is unused and will be removed from module top_zynqberry.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 721.086 ; gain = 463.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 740.258 ; gain = 483.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 740.258 ; gain = 483.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    11|
+|3     |LUT1   |     2|
+|4     |LUT2   |     4|
+|5     |LUT3   |    11|
+|6     |LUT4   |     1|
+|7     |LUT6   |     6|
+|8     |FDRE   |    33|
+|9     |IBUF   |     1|
+|10    |OBUF   |     1|
+|11    |OBUFT  |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------+---------+------+
+|      |Instance      |Module   |Cells |
++------+--------------+---------+------+
+|1     |top           |         |    73|
+|2     |  u_Led_Chika |led_ctrl |    68|
++------+--------------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 750.285 ; gain = 493.098
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 100 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 750.285 ; gain = 184.770
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 750.285 ; gain = 493.098
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+48 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:47 . Memory (MB): peak = 762.070 ; gain = 517.758
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1/top_zynqberry.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_zynqberry_utilization_synth.rpt -pb top_zynqberry_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 762.070 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  8 00:08:50 2019...

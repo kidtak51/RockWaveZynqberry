@@ -60,11 +60,15 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param synth.incrementalSynthesisCache C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/.Xil/Vivado-28396-DESKTOP-FGTB7AJ/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z010clg225-1
   set_property board_part_repo_paths C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/board_files [current_project]
@@ -76,7 +80,7 @@ set rc [catch {
   set_property ip_repo_paths C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/ip_lib [current_project]
   set_property ip_output_repo C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1/zsys_wrapper.dcp
+  add_files -quiet C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.runs/synth_1/top_zynqberry.dcp
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/vivado_target.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_bitgen_common.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_common.xdc
@@ -84,7 +88,7 @@ set rc [catch {
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_hdmi.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_te0726.xdc
   read_xdc C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/constraints/_i_timing.xdc
-  link_design -top zsys_wrapper -part xc7z010clg225-1
+  link_design -top top_zynqberry -part xc7z010clg225-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -100,8 +104,8 @@ set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
   opt_design 
-  write_checkpoint -force zsys_wrapper_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file zsys_wrapper_drc_opted.rpt -pb zsys_wrapper_drc_opted.pb -rpx zsys_wrapper_drc_opted.rpx"
+  write_checkpoint -force top_zynqberry_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file top_zynqberry_drc_opted.rpt -pb top_zynqberry_drc_opted.pb -rpx top_zynqberry_drc_opted.rpx"
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -120,10 +124,10 @@ set rc [catch {
     implement_debug_core 
   } 
   place_design 
-  write_checkpoint -force zsys_wrapper_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file zsys_wrapper_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file zsys_wrapper_utilization_placed.rpt -pb zsys_wrapper_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file zsys_wrapper_control_sets_placed.rpt"
+  write_checkpoint -force top_zynqberry_placed.dcp
+  create_report "impl_1_place_report_io_0" "report_io -file top_zynqberry_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file top_zynqberry_utilization_placed.rpt -pb top_zynqberry_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file top_zynqberry_control_sets_placed.rpt"
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -139,19 +143,19 @@ set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
   route_design 
-  write_checkpoint -force zsys_wrapper_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file zsys_wrapper_drc_routed.rpt -pb zsys_wrapper_drc_routed.pb -rpx zsys_wrapper_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file zsys_wrapper_methodology_drc_routed.rpt -pb zsys_wrapper_methodology_drc_routed.pb -rpx zsys_wrapper_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file zsys_wrapper_power_routed.rpt -pb zsys_wrapper_power_summary_routed.pb -rpx zsys_wrapper_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file zsys_wrapper_route_status.rpt -pb zsys_wrapper_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file zsys_wrapper_timing_summary_routed.rpt -pb zsys_wrapper_timing_summary_routed.pb -rpx zsys_wrapper_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file zsys_wrapper_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file zsys_wrapper_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file zsys_wrapper_bus_skew_routed.rpt -pb zsys_wrapper_bus_skew_routed.pb -rpx zsys_wrapper_bus_skew_routed.rpx"
+  write_checkpoint -force top_zynqberry_routed.dcp
+  create_report "impl_1_route_report_drc_0" "report_drc -file top_zynqberry_drc_routed.rpt -pb top_zynqberry_drc_routed.pb -rpx top_zynqberry_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file top_zynqberry_methodology_drc_routed.rpt -pb top_zynqberry_methodology_drc_routed.pb -rpx top_zynqberry_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file top_zynqberry_power_routed.rpt -pb top_zynqberry_power_summary_routed.pb -rpx top_zynqberry_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file top_zynqberry_route_status.rpt -pb top_zynqberry_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file top_zynqberry_timing_summary_routed.rpt -pb top_zynqberry_timing_summary_routed.pb -rpx top_zynqberry_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file top_zynqberry_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file top_zynqberry_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file top_zynqberry_bus_skew_routed.rpt -pb top_zynqberry_bus_skew_routed.pb -rpx top_zynqberry_bus_skew_routed.rpx"
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {
-  write_checkpoint -force zsys_wrapper_routed_error.dcp
+  write_checkpoint -force top_zynqberry_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {
@@ -163,10 +167,10 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  catch { write_mem_info -force zsys_wrapper.mmi }
-  write_bitstream -force zsys_wrapper.bit 
-  catch {write_debug_probes -quiet -force zsys_wrapper}
-  catch {file copy -force zsys_wrapper.ltx debug_nets.ltx}
+  catch { write_mem_info -force top_zynqberry.mmi }
+  write_bitstream -force top_zynqberry.bit 
+  catch {write_debug_probes -quiet -force top_zynqberry}
+  catch {file copy -force top_zynqberry.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {

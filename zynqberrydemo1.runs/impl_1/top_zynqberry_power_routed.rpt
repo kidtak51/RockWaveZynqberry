@@ -1,16 +1,16 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sun Oct  6 14:44:41 2019
+| Date             : Tue Oct  8 00:10:21 2019
 | Host             : DESKTOP-FGTB7AJ running 64-bit major release  (build 9200)
-| Command          : report_power -file zsys_wrapper_power_routed.rpt -pb zsys_wrapper_power_summary_routed.pb -rpx zsys_wrapper_power_routed.rpx
-| Design           : zsys_wrapper
+| Command          : report_power -file top_zynqberry_power_routed.rpt -pb top_zynqberry_power_summary_routed.pb -rpx top_zynqberry_power_routed.rpx
+| Design           : top_zynqberry
 | Device           : xc7z010clg225-1
 | Design State     : routed
 | Grade            : commercial
 | Process          : typical
 | Characterization : Production
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Power Report
 
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.000 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       74 |       --- |             --- |
+| Slice Logic    |    <0.001 |       73 |       --- |             --- |
 |   LUT as Logic |    <0.001 |       24 |     17600 |            0.14 |
 |   CARRY4       |    <0.001 |       11 |      4400 |            0.25 |
 |   Register     |    <0.001 |       33 |     35200 |            0.09 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |        5 |       --- |             --- |
+|   Others       |     0.000 |        4 |       --- |             --- |
 | Signals        |    <0.001 |       56 |       --- |             --- |
-| I/O            |    <0.001 |       26 |        54 |           48.15 |
+| I/O            |    <0.001 |        4 |        54 |            7.41 |
 | Static Power   |     0.090 |          |           |                 |
 | Total          |     0.090 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -143,33 +143,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------------------+-----------+
-| Name                  | Power (W) |
-+-----------------------+-----------+
-| zsys_wrapper          |    <0.001 |
-|   GPIO_1_tri_iobuf_0  |     0.000 |
-|   GPIO_1_tri_iobuf_1  |     0.000 |
-|   GPIO_1_tri_iobuf_10 |     0.000 |
-|   GPIO_1_tri_iobuf_11 |     0.000 |
-|   GPIO_1_tri_iobuf_12 |     0.000 |
-|   GPIO_1_tri_iobuf_13 |     0.000 |
-|   GPIO_1_tri_iobuf_14 |     0.000 |
-|   GPIO_1_tri_iobuf_16 |     0.000 |
-|   GPIO_1_tri_iobuf_17 |     0.000 |
-|   GPIO_1_tri_iobuf_18 |     0.000 |
-|   GPIO_1_tri_iobuf_19 |     0.000 |
-|   GPIO_1_tri_iobuf_2  |     0.000 |
-|   GPIO_1_tri_iobuf_20 |     0.000 |
-|   GPIO_1_tri_iobuf_21 |     0.000 |
-|   GPIO_1_tri_iobuf_23 |     0.000 |
-|   GPIO_1_tri_iobuf_3  |     0.000 |
-|   GPIO_1_tri_iobuf_4  |     0.000 |
-|   GPIO_1_tri_iobuf_5  |     0.000 |
-|   GPIO_1_tri_iobuf_6  |     0.000 |
-|   GPIO_1_tri_iobuf_7  |     0.000 |
-|   GPIO_1_tri_iobuf_8  |     0.000 |
-|   GPIO_1_tri_iobuf_9  |     0.000 |
-|   led                 |    <0.001 |
-+-----------------------+-----------+
++---------------+-----------+
+| Name          | Power (W) |
++---------------+-----------+
+| top_zynqberry |    <0.001 |
+|   u_Led_Chika |    <0.001 |
++---------------+-----------+
 
 

@@ -17,7 +17,11 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param synth.incrementalSynthesisCache C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/.Xil/Vivado-28396-DESKTOP-FGTB7AJ/incrSyn
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z010clg225-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,10 +36,8 @@ set_property board_part trenz.biz:te0726_m:part0:3.1 [current_project]
 set_property ip_repo_paths c:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/ip_lib [current_project]
 set_property ip_output_repo c:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {
-  C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/led_test.vhd
-  C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqverry.vhd
-}
+read_verilog -library xil_defaultlib C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/top_zynqberry.v
+read_vhdl -library xil_defaultlib C:/Users/house/Downloads/te0726-zynqberrydemo1-vivado_2018.2-build_03_20181120163939/zynqberrydemo1/vivadoRW/zynqberrydemo1.srcs/sources_1/led_test.vhd
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -50,12 +52,12 @@ set_property used_in_implementation false [get_files C:/Users/house/Downloads/te
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-synth_design -top zsys_wrapper -part xc7z010clg225-1
+synth_design -top top_zynqberry -part xc7z010clg225-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef zsys_wrapper.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file zsys_wrapper_utilization_synth.rpt -pb zsys_wrapper_utilization_synth.pb"
+write_checkpoint -force -noxdef top_zynqberry.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_zynqberry_utilization_synth.rpt -pb top_zynqberry_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
