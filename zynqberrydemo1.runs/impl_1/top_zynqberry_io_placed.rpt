@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date                      : Tue Oct  8 00:23:17 2019
+| Date                      : Sat Oct 12 07:46:10 2019
 | Host                      : DESKTOP-FGTB7AJ running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_zynqberry_io_placed.rpt
 | Design                    : top_zynqberry
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           124 |
+|           132 |
 +---------------+
 
 
@@ -237,10 +237,10 @@ Table of Contents
 | P5         |                   |            | PS_DDR_A6_502           | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | P6         |                   |            | PS_DDR_A8_502           | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | P7         |                   | High Range | VCCO_34                 | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |          |                  |              |                   |              |
-| P8         |                   | High Range | IO_L23P_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| P9         |                   | High Range | IO_L23N_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| P10        |                   | High Range | IO_L24P_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| P11        |                   | High Range | IO_L16P_T2_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
+| P8         | hdmi_data_p[0]    | High Range | IO_L23P_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| P9         | hdmi_data_n[0]    | High Range | IO_L23N_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| P10        | hdmi_data_p[1]    | High Range | IO_L24P_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| P11        | hdmi_data_p[2]    | High Range | IO_L16P_T2_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | P12        |                   |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |          |                  |              |                   |              |
 | P13        | csi_d_p[1]        | High Range | IO_L18P_T2_34           | INPUT       | LVDS_25     |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | P14        |                   | High Range | IO_L18N_T2_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
@@ -251,11 +251,11 @@ Table of Contents
 | R4         |                   |            | VCCO_DDR_502            | VCCO        |             |         |            |      |                     |                      |   any** |            |           |          |          |                  |              |                   |              |
 | R5         |                   |            | PS_DDR_CAS_B_502        | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | R6         |                   |            | PS_DDR_RAS_B_502        | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| R7         |                   | High Range | IO_L20P_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| R8         |                   | High Range | IO_L20N_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
+| R7         | hdmi_clk_p[0]     | High Range | IO_L20P_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| R8         | hdmi_clk_n[0]     | High Range | IO_L20N_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | R9         |                   |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |          |                  |              |                   |              |
-| R10        |                   | High Range | IO_L24N_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| R11        |                   | High Range | IO_L16N_T2_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
+| R10        | hdmi_data_n[1]    | High Range | IO_L24N_T3_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| R11        | hdmi_data_n[2]    | High Range | IO_L16N_T2_34           | OUTPUT      | TMDS_33     |      34 |            |      |                     |            FP_3.3_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | R12        | led_op[0]         | High Range | IO_L17P_T2_34           | OUTPUT      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | R13        | GPIO_1_tri_io[11] | High Range | IO_L17N_T2_34           | BIDIR       | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | R14        |                   | High Range | VCCO_34                 | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |          |                  |              |                   |              |

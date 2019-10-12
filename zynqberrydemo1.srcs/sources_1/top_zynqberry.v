@@ -5,7 +5,7 @@
  * File Created: 2019/10/07 21:53
  * Author: kidtak51 ( 45393331+kidtak51@users.noreply.github.com )
  * *****
- * Last Modified: 2019/10/08 24:19
+ * Last Modified: 2019/10/08 21:25
  * Modified By: kidtak51 ( 45393331+kidtak51@users.noreply.github.com )
  * *****
  * Copyright 2018 - 2019  Project RockWave
@@ -52,16 +52,19 @@ module top_zynqberry(
     input [0:0]    csi_d_lp_p       ,
     input [1:0]    csi_d_n          ,
     input [1:0]    csi_d_p          ,
-    //output[0:0]    hdmi_clk_n       ,
-    //output[0:0]    hdmi_clk_p       ,
-    //output[2:0]    hdmi_data_n      ,
-    //output[2:0]    hdmi_data_p      ,
+    output[0:0]    hdmi_clk_n       ,
+    output[0:0]    hdmi_clk_p       ,
+    output[2:0]    hdmi_data_n      ,
+    output[2:0]    hdmi_data_p      ,
     output[0:0]    led_op           ,
     input [0:0]    ps_clk           
 );
 
+wire clk_out1;
+wire clk_out2;
 clk_wiz_0 u_clk_wiz_0(
   .clk_out1(clk_out1),
+  .clk_out2(clk_out2),
   .reset(1'b0),
   .locked(locked),
   .clk_in1(ps_clk)
@@ -98,5 +101,120 @@ assign GPIO_1_tri_io[20] = 1'bz;
 assign GPIO_1_tri_io[21] = 1'bz;
 assign GPIO_1_tri_io[22] = 1'bz;
 assign GPIO_1_tri_io[23] = 1'bz;//
-    
+
+reg[23:0] data;
+reg h_sync;
+reg v_sync;
+reg h_valid;
+reg v_valid;
+
+rgb2dvi u_rgb2dvi(
+    .TMDS_Clk_p(hdmi_clk_p),
+    .TMDS_Clk_n(hdmi_clk_n),
+    .TMDS_Data_p(hdmi_data_p),
+    .TMDS_Data_n(hdmi_data_n),
+    .aRst(1'b0),
+    .aRst_n(1'b1),
+    .vid_pData(data),
+    .vid_pVDE(h_valid && v_valid),
+    .vid_pHSync(h_sync),
+    .vid_pVSync(v_sync),
+    .PixelClk(clk_out1),
+    .SerialClk(clk_out2)//do not use
+);
+
+//assign led_op = v_sync;
+
+reg[31:0] h_cnt = 0;
+reg[31:0] v_cnt = 0;
+
+
+always @(posedge clk_out1) begin
+    if(h_cnt > 'd1650) begin
+        h_cnt = 'd0;
+        if(v_cnt > 'd750) begin
+            v_cnt = 'd0;
+        end
+        else begin
+            v_cnt = v_cnt + 1'b1;
+        end
+    end
+    else begin
+        h_cnt = h_cnt + 'd1;
+    end
+end
+always @(posedge clk_out1) begin
+    if('d110 <= h_cnt && h_cnt < ('d110 + 'd40)) begin
+        h_sync = 1'b1;
+    end
+    else begin
+        h_sync = 1'b0;
+    end
+end
+always @(posedge clk_out1) begin
+    if('d370 <= h_cnt && h_cnt < ('d370 + 'd1280)) begin
+        h_valid = 1'b1;
+    end
+    else begin
+        h_valid = 1'b0;
+    end
+end
+
+always @(posedge clk_out1) begin
+    if('d5 <= v_cnt && v_cnt < ('d5 + 'd5)) begin
+        v_sync = 1'b1;
+    end
+    else begin
+        v_sync = 1'b0;
+    end
+end
+always @(posedge clk_out1) begin
+    if('d20 <= v_cnt && v_cnt < ('d20 + 'd720)) begin
+        v_valid = 1'b1;
+    end
+    else begin
+        v_valid = 1'b0;
+    end
+end
+
+always @(posedge clk_out1) begin
+    if(v_cnt >= 'd600) begin
+        if(h_cnt >= 'd1000) begin
+            data[23:16] <= 8'b1111_1111;
+        end
+        else if(h_cnt >= 'd700)begin
+            data[7:0] <= 8'b1111_1111;
+        end
+        else if(h_cnt >= 'd500)begin
+            data[15:8] <= 8'b1111_1111;            
+        end
+        else if(h_cnt == 'd0)begin
+            data <= 'd0;
+        end            
+    end
+    else if (v_cnt >= 'd300) begin
+        if(h_cnt >= 'd1000) begin
+            data[7:0] <= 8'b1111_1111;
+        end
+        else if(h_cnt >= 'd700)begin
+            data[15:8] <= 8'b1111_1111;
+        end
+        else if(h_cnt >= 'd500)begin
+            data[23:16] <= 8'b1111_1111;
+        end
+        else if(h_cnt == 'd0)begin
+            data <= 'd0;
+        end
+    end
+    else begin
+        if (h_cnt[6:0] == 7'b1000000) begin
+            data <= {data[15:8], data[7:0], data[23:16]};
+        end
+        else if (h_cnt == 'd0) begin
+            data <= 23'h0000FF;
+        end
+    end
+end
+
+
 endmodule
