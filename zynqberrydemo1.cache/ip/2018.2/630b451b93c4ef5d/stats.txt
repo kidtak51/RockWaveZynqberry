@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Sat Sep 28 23:28:38 UTC 2019
-VLNV: xilinx.com:ip:xlconcat:2.1
-SynthRuntime: 64

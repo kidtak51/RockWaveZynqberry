@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Sun Sep 29 03:31:40 UTC 2019
-VLNV: trenz.biz:user:axis_raw_demosaic:1.0
-SynthRuntime: 42
